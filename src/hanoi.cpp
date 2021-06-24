@@ -1,5 +1,5 @@
 /**
- * Implementation of Tower and Hanoi
+ * Implementation of classes Tower and Hanoi
  */
  
 #include <algorithm>
@@ -33,11 +33,13 @@ Hanoi::Hanoi(size_t height)
     this->solveHanoiStart(std::cout, this->towerA, this->towerB, this->towerC);
 }
 
+/**
+ * Helper function for moving the plate at the top
+ */
 void Hanoi::moveTopPlate(Tower& origin, Tower& target, 
      const std::function<void (const std::string&, const std::string&)> &preMovePrint, 
      const std::function<void ()> &postMovePrint)
 {
-    // TODO: Implement
     if (origin.getTower().size() == 0)
         return;
     if (target.getTower().size() > 0) {
@@ -56,11 +58,13 @@ void Hanoi::moveTopPlate(Tower& origin, Tower& target,
     }
 }
 
+/**
+ * Algorithm that solves the 'Tower of Hanoi'
+ */
 void Hanoi::solveHanoi(size_t towersize, Tower& source, Tower& destination, Tower& spare, 
     const std::function<void (const std::string&, const std::string&)> &preMovePrint, 
     const std::function<void ()> &postMovePrint)
 {
-    // TODO: Implement
     if (towersize == 1) {
         this->moveTopPlate(source, destination, preMovePrint, postMovePrint);
         return;
@@ -72,8 +76,8 @@ void Hanoi::solveHanoi(size_t towersize, Tower& source, Tower& destination, Towe
 
 void Hanoi::solveHanoiStart(std::ostream& os, Tower& source, Tower& destination, Tower& spare)
 {
-    // TODO: Implement
     size_t h = source.getTower().size();
+	// print functions
     auto preMovePrint = [&os](const std::string& a, const std::string& b)
         {os << "Move from " << a << " to " << b << std::endl;};
     auto postMovePrint = [this, &h, &os]()
@@ -107,6 +111,7 @@ void Hanoi::solveHanoiStart(std::ostream& os, Tower& source, Tower& destination,
             }
             os << std::string(6*h+2, '_') << "\n\n";
         };
+	// start algorithm
     this->solveHanoi(h, source, destination, spare, preMovePrint, postMovePrint);
 }
 

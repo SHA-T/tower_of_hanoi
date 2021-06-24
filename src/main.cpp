@@ -11,13 +11,16 @@
  */
 int main()
 {
-    std::cout << "First Example: Tower of height 3  A->B" << std::endl; 
-    Hanoi hanoi(3);
-    
-#if false
-    std::cout << "\n\nSecond Example: Tower of height 5\n";
-    Hanoi hanoi2(5); 
-#endif
+	size_t height;
+    std::cout << "Choose the height of your tower (e.g. 4): " << std::endl;
+	std::cin >> height;
+    while(std::cin.fail()) {
+        std::cout << "Error! Please insert a number for the height of your tower: " << std::endl;
+        std::cin.clear();
+        std::cin.ignore(256,'\n');
+        std::cin >> height;
+    }
+    Hanoi hanoi(height);
 
     return 0;
 }
