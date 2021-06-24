@@ -2,7 +2,7 @@
 This is an implementation of the mathematical disk game 'Tower of Hanoi'. Refer to [wikipedia.org/wiki/Tower_of_Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi) for the rules of the game.
 
 ## Usage
-After starting the program it will ask you to select the height of the tower. Note that the time complexity of solving a tower of height N is O(2^N). So, for faster computation don't chosse a height greater than 12. If you want to cancel the computation press `Ctrl` + `c`.
+After starting the program it will ask you to select the height of the tower. Note that the time complexity of solving a tower of height N is O(2^N). So, for faster computation don't choose a height greater than 12. If you want to cancel the computation press `Ctrl` + `C`.
 
 ### Exemplary Output
 ```
@@ -115,7 +115,7 @@ __________________________
 ```
 
 ## Build
-If you want to modify the program you can afterwards rebuild it by executing the makefile. If make does not work on your system, you can manually build your executable using g++:
+If you want to modify the program you can afterwards rebuild it by executing the 'makefile'. If make does not work on your system, you can manually build your executable using g++:
 1. First compile 'hanoi.cpp' and 'main.cpp':
   ```
   g++ -c -o hanoi.o hanoi.cpp
