@@ -127,3 +127,4 @@ If you want to modify the program you can afterwards rebuild it by executing the
   ```
   g++ -o program_name hanoi.o main.o
   ```
+This project was created on C++17 and GCC 10 and functionality was successfully tested on Windows 10 and several Linux distributions.
